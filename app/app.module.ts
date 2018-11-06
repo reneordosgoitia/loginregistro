@@ -11,13 +11,18 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 import { IngresoPage } from '../pages/ingreso/ingreso';
+import { ConviertetePage } from '../pages/conviertete/conviertete';
+import { InstructorPage } from '../pages/instructor/instructor';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
 	LoginPage,
 	RegistroPage,
-	IngresoPage
+	IngresoPage,
+	ConviertetePage,
+	InstructorPage
+	
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,9 @@ import { IngresoPage } from '../pages/ingreso/ingreso';
     HomePage,
 	LoginPage,
 	RegistroPage,
-	IngresoPage
+	IngresoPage,
+	ConviertetePage,
+	InstructorPage
   ],
   providers: [
     StatusBar,

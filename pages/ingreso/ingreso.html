@@ -15,5 +15,53 @@
 
 
 <ion-content padding>
+<div padding>
+  <ion-segment [(ngModel)]="area">
+    <ion-segment-button value="Finanzas">
+      Finanzas
+    </ion-segment-button>
+    <ion-segment-button value="Logica">
+      Logica
+    </ion-segment-button>
+	<ion-segment-button value="Blockchain">
+      Blockchain
+    </ion-segment-button>
+	<ion-segment-button value="Machine Learning">
+      Machine Learning
+    </ion-segment-button>
+	<ion-segment-button value="Internet de las cosas">
+      Internet de las cosas
+    </ion-segment-button>
+	
+  </ion-segment>
+</div>
 
+<div [ngSwitch]="area">
+  <ion-list *ngSwitchCase="'Finanzas'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-puppy-1.jpg">
+      </ion-thumbnail>
+      <h2>Finanzas 1</h2>
+	  <button ion-button color="secondary" (click)="(IfLogin())" >Login</button>
+	</ion-item>
+	<ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-puppy-1.jpg">
+      </ion-thumbnail>
+      <h2>Finanzas 2</h2>
+	</ion-item>
+    ...
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'Logica'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Logica</h2>
+    </ion-item>
+    ...
+  </ion-list>
+</div>
 </ion-content>
