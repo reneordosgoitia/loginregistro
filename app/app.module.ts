@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import {HttpModule} from "@angular/http";
 
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -27,7 +29,9 @@ import { InstructorPage } from '../pages/instructor/instructor';
   imports: [
     BrowserModule,
 	HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+	HttpClientModule
+	
 	
   ],
   bootstrap: [IonicApp],

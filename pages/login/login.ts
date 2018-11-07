@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController, ToastController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {Http, Headers, RequestOptions} from "@angular/http";
 import { IngresoPage } from '../ingreso/ingreso';
+
+
 
 /**
  * Generated class for the LoginPage page.
@@ -18,7 +20,9 @@ import { IngresoPage } from '../ingreso/ingreso';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alerta:AlertController, private http: Http, public loading: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+  public alerta:AlertController, private http: Http, 
+  public loading: LoadingController, public toastCtrl: ToastController)  {
   }
 
   ionViewDidLoad() {
