@@ -29,8 +29,8 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   rcontrasena: string;
-	contrasena: string;
-	correo: string;
+	password: string;
+	email: string;
 	nombre: string;
 	
 	VerAlerta(msg: string)
@@ -45,7 +45,7 @@ export class LoginPage {
 	
 	
 	Login(){ 
-		if (this.correo == undefined )
+		if (this.email == undefined )
 				{
 					let alert = this.VerAlerta("Correo vacío");
                 	
@@ -53,7 +53,7 @@ export class LoginPage {
 				else 
 					
 					{ 
-						if(this.contrasena == undefined)
+						if(this.password == undefined)
 							{
 							let alert = this.VerAlerta("Contrasena Vacía");
 							}
@@ -68,25 +68,26 @@ export class LoginPage {
 				
 								let options = new RequestOptions({ headers: headers });
 				
-								let data = { 
-											email: this.correo, 
-											password: this.contrasena};
-				
+								let data = { auth:{
+											email: this.email, 
+											password: this.password}
+										};
 								let loader = this.loading.create({
 											content: 'Por favor espere...',});		
 								loader.present().then(() => {
  
-							this.http.post('https://json-pruebas.herokuapp.com/api/login.php',data,options)
+							this.http.post('http://localhost:3000/user_token',data,options)
  
 							.map(res => res.json())
  
 							.subscribe(res => {
  
 							console.log(res)
+							console.log(res.jwt)
  
 							loader.dismiss()
  
-							if(res=="Correcto"){
+							if(res.jwt!=undefined){
  
 							//let alert = this.alerta.create({
 							//title:"CONGRATS",
